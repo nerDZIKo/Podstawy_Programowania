@@ -1,1 +1,1 @@
-"# Podstawy-Programowania_C" 
+Podstawy-Programowania w C na zajęciach na Politechnice
