@@ -13,8 +13,10 @@ int main() {
     }; 
     
     // Print the 2D array 
-    for (int i = 0; i < 3; i++) { 
-        for (int j = 0; j < 4; j++) { 
+    for (int i = 0; i < 3; i++) 
+    { 
+        for (int j = 0; j < 4; j++) 
+        { 
             printf("%d ", array[i][j]); 
         } 
         printf("\n"); 
