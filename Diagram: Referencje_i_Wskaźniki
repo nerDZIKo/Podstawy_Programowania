@@ -1,3 +1,19 @@
+#include <stdio.h>
+
+void zmiana(int *a) {
+    *a = 10;  // Dereferencja wskaźnika: zmienia wartość, na którą wskazuje wskaźnik
+}
+
+int main() {
+    int x = 5;  // Zmienna x, wartość 5
+    printf("Przed: %d\n", x);  // Wypisuje: 5
+
+    zmiana(&x);  // Przekazanie adresu zmiennej x do funkcji zmiana
+
+    printf("Po: %d\n", x);  // Wypisuje: 10, ponieważ wskaźnik zmienił wartość zmiennej
+    return 0;
+}
+
 +-------------------------+
 |        Zmienna          |
 |     int x = 5;          |
