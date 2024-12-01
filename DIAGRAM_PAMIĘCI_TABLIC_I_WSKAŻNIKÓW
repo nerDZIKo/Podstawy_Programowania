@@ -16,7 +16,6 @@ int main() {
     return 0;
 }
 
-
 +----------------------------------------+
 |                Zmienna                |
 | tablica[3] = {10, 20, 30};             |
@@ -67,4 +66,29 @@ int main() {
 | Przechowuje adres trzeciego elementu  |
 | tablica[2] = 30                        |
 +----------------------------------------+
+
+
+# Tworzymy listę w Pythonie
+tablica = [10, 20, 30]   # Tablica z trzema elementami
+
+# Wypisujemy elementy listy
+print("tablica[0]:", tablica[0])  # Wypisuje: 10
+print("tablica:", tablica)        # Wypisuje: [10, 20, 30]
+
+# Odwołanie do "wskaźnika" poprzez indeksowanie
+p = 0  # Przypisujemy zmiennej p indeks, który wskazuje na pierwszy element
+
+# Wypisujemy element wskazywany przez "wskaźnik"
+print("p:", p)                   # Wypisuje: 0 (indeks)
+print("*p:", tablica[p])          # Wypisuje: 10 (wartość tablica[0])
+
+# Zwiększamy "wskaźnik" (indeks)
+p += 1  # Zwiększamy indeks, aby przejść do kolejnego elementu
+
+# Wypisujemy kolejne elementy
+print("p:", p)                   # Wypisuje: 1 (indeks)
+print("*p:", tablica[p])          # Wypisuje: 20 (wartość tablica[1])
+
+
+
 
