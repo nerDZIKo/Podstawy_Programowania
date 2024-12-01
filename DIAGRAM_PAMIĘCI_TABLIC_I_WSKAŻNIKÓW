@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+int main() {
+    int tablica[3] = {10, 20, 30};   // Tablica z trzema elementami
+    int* p = tablica;                // Wskaźnik p wskazuje na pierwszy element tablicy
+
+    printf("tablica[0]: %d\n", tablica[0]);  // Wypisuje: 10
+    printf("p: %p\n", p);                   // Wypisuje: adres tablica[0]
+    printf("*p: %d\n", *p);                 // Wypisuje: 10 (wartość tablica[0])
+    
+    p++;  // Przesuwamy wskaźnik p na kolejny element tablicy
+    printf("p: %p\n", p);                   // Wypisuje: adres tablica[1]
+    printf("*p: %d\n", *p);                 // Wypisuje: 20 (wartość tablica[1])
+
+    return 0;
+}
+
+
++----------------------------------------+
+|                Zmienna                |
+| tablica[3] = {10, 20, 30};             |
++----------------------------------------+
+| Tablica:  | 10  | 20  | 30  |         |
++----------------------------------------+
+
++----------------------------------------+
+|                Wskaźnik               |
+| p = tablica                            |
++----------------------------------------+
+| Wskaźnik p: 0x7ffee1b12c4c             |
+| Przechowuje adres pierwszego elementu  |
+| tablica[0] = 10                        |
++----------------------------------------+
+
+                    ^
+                    |
+          +----------------------------+
+          |  Przesunięcie wskaźnika p   |
+          |  p++                         |
+          +----------------------------+
+                    |
+                    v
+
++----------------------------------------+
+|                Wskaźnik               |
+| p = tablica + 1                        |
++----------------------------------------+
+| Wskaźnik p: 0x7ffee1b12c50             |
+| Przechowuje adres drugiego elementu   |
+| tablica[1] = 20                        |
++----------------------------------------+
+                    ^
+                    |
+          +----------------------------+
+          |  Przesunięcie wskaźnika p   |
+          |  p++                         |
+          +----------------------------+
+                    |
+                    v
+
++----------------------------------------+
+|                Wskaźnik               |
+| p = tablica + 2                        |
++----------------------------------------+
+| Wskaźnik p: 0x7ffee1b12c54             |
+| Przechowuje adres trzeciego elementu  |
+| tablica[2] = 30                        |
++----------------------------------------+
+
