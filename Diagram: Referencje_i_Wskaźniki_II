@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    int x = 20;       // Zmienna x
+    int* p = &x;      // Wskaźnik p przechowujący adres x
+    int** a = &p;     // Wskaźnik podwójny a przechowujący adres wskaźnika p
+
+    printf("x: %d\n", x);     // Wypisuje: 20
+    printf("p: %d\n", p);     // Wypisuje: adres zmiennej x
+    printf("*p: %d\n", *p);   // Wypisuje: 20 (wartość zmiennej x, na którą wskazuje p)
+    printf("a: %d\n", a);     // Wypisuje: adres wskaźnika p
+    printf("*a: %d\n", *a);   // Wypisuje: adres zmiennej x (wartość, na którą wskazuje a)
+    printf("**a: %d\n", **a); // Wypisuje: 20 (wartość zmiennej x, na którą wskazuje **a)
+
+    return 0;
+}
+
++-------------------------------+
+|           Zmienna x            |
+|-------------------------------|
+| Wartość: 20                    |
+| Adres: 0x7ffee1b12c4c          |
++-------------------------------+
+
++-------------------------------+
+|           Wskaźnik p           |
+|-------------------------------|
+| Wartość: Adres zmiennej x     |
+| Adres: 0x7ffee1b12d4d          |
+| (przechowuje 0x7ffee1b12c4c)   |
++-------------------------------+
+                     |
+                     v
+            +--------------------+
+            |  Wskaźnik podwójny  |
+            |          a           |
+            |--------------------|
+            | Wartość: Adres p    |
+            | Adres: 0x7ffee1b12e4f|
+            | (przechowuje 0x7ffee1b12d4d)|
+            +--------------------+
+
++-------------------------+      +-------------------------+
+| Adresy pamięci w diagramie: | <-> | Wartości i odniesienia   |
++-------------------------+      +-------------------------+
