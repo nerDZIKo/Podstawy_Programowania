@@ -1,0 +1,61 @@
++-------------------------------------------------------------+
+|               Segment kodu (Text)                            |
+|     - Zawiera instrukcje programu (czyli kod, który jest      |
+|       wykonywany przez procesor).                           |
+|     - Jest to sekcja, w której znajduje się kod programu.    |
+|     - Zawiera także startowy kod inicjalizacyjny (tzw. entry)|
+|     - Jest to obszar pamięci tylko do odczytu (czyli          |
+|       zapisywanie w nim danych nie jest dozwolone).          |
++-------------------------------------------------------------+
+|               Segment danych (Data)                          |
+|     - Zawiera dane, które są już zainicjowane przez          |
+|       programistę.                                           |
+|     - Zmienna globalna, statyczna (np. `global_var = 100;`)   |
+|     - Zawiera zmienne globalne i statyczne, które mają       |
+|       przypisaną konkretną wartość w czasie kompilacji.      |
+|     - Te dane są inicjowane przed wykonaniem programu.       |
++-------------------------------------------------------------+
+|               Segment BSS (BSS)                              |
+|     - Zawiera dane, które są zadeklarowane, ale nie          |
+|       zainicjowane (np. zmienne globalne, które              |
+|       programista zadeklarował, ale nie przypisał im wartości)|
+|     - Na przykład: `int global_var;` (bez przypisania wartości).|
+|     - Pamięć dla tych zmiennych jest alokowana, ale system   |
+|       ustawia je na wartość zero przed uruchomieniem programu.|
++-------------------------------------------------------------+
+|               Stos (Stack)                                   |
+|     - Używany do przechowywania zmiennych lokalnych,         |
+|       argumentów funkcji oraz adresów powrotu (tzw.          |
+|       "adresów zwrotnych") po wywołaniu funkcji.             |
+|     - Zawiera dane związane z wywołaniami funkcji.           |
+|     - Zmienne lokalne są przechowywane na stosie w trakcie   |
+|       wykonywania funkcji (np. zmienne zadeklarowane w funkcjach).|
+|     - Stos działa w sposób "Last In, First Out" (LIFO),       |
+|       czyli ostatnia zmienna dodana na stosie jest pierwsza, |
+|       która zostaje z niego usunięta (np. w przypadku zakończenia funkcji).|
+|     - Przykład: `main_var` i `local_var` z funkcji `main()`  |
++-------------------------------------------------------------+
+|               Sterta (Heap)                                  |
+|     - Pamięć dynamicznie alokowana za pomocą funkcji takich |
+|       jak `malloc()`, `calloc()`, `realloc()`.               |
+|     - Zawiera dane, których rozmiar może zmieniać się w trakcie|
+|       działania programu (np. dynamicznie tworzone tablice,   |
+|       listy, struktury).                                      |
+|     - Pamięć przydzielona na stercie musi być ręcznie zwolniona|
+|       przez programistę (np. używając `free()`).              |
+|     - Pamięć w stercie jest alokowana na potrzeby konkretnych|
+|       danych, takich jak rozmiar tablicy, struktury. Pamięć   |
+|       sterty nie jest związana z konkretnym blokiem kodu.     |
++-------------------------------------------------------------+
+|               Segment Startowy (Startup)                    |
+|     - Zawiera kod odpowiedzialny za uruchomienie programu    |
+|       przed wywołaniem funkcji `main()`.                     |
+|     - Jest to fragment, który przygotowuje środowisko do     |
+|       działania programu (np. ustawianie wskaźników na      |
+|       argumenty funkcji, konfiguracja stosu, wczytanie       |
+|       zmiennych środowiskowych, itp.).                       |
+|     - Ten segment odpowiada za inicjalizację danych oraz     |
+|       uruchomienie głównej pętli programu.                   |
+|     - W systemach Unix/Linux jest to często fragment z        |
+|       `crt0.c` lub jego odpowiednik.                         |
++-------------------------------------------------------------+
