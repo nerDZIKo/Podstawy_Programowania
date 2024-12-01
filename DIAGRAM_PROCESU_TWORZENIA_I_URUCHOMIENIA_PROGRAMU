@@ -41,9 +41,12 @@
 |      do pamięci operacyjnej |
 |      (np. wczytuje kod do     |
 |      segmentu tekstowego).   |
-|    - Tworzy proces w         |
-|      przestrzeni adresowej  |
-|      programu.               |
+|    - Przydziela segmenty:    |
+|      + Segment kodu (Text)  |
+|      + Segment danych (Data)|
+|      + Segment BSS (BSS)    |
+|      + Stos (Stack)         |
+|      + Sterta (Heap)        |
 +-----------------------------+
                 |
                 v
