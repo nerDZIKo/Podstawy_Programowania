@@ -1,0 +1,58 @@
++-----------------------------+
+| 1. Kod źródłowy (Source Code)|
+|    - Program napisany w języku|
+|      wysokiego poziomu (np.  |
+|      C, C++, Java).          |
+|    - Zawiera instrukcje, zmien|
+|      ne, funkcje.            |
++-----------------------------+
+                |
+                v
++-----------------------------+
+| 2. Kompilacja (Compilation)  |
+|    - Kompilator przetwarza   |
+|      kod źródłowy (np. C) na |
+|      kod maszynowy (np. plik |
+|      obiektowy `.o` lub `.obj`).|
+|    - Wykorzystuje nagłówki,  |
+|      biblioteki i generuje   |
+|      plik wynikowy (np. `.o`).|
++-----------------------------+
+                |
+                v
++-----------------------------+
+| 3. Łączenie (Linking)        |
+|    - Łącznik (linker)       |
+|      łączy różne pliki       |
+|      obiektowe (np. `main.o`)|
+|      w jeden plik wykonywalny|
+|      (np. `.exe` lub `.out`).|
+|    - Łączy kod, dane globalne|
+|      i biblioteki zewnętrzne.|
+|    - Rozwiązuje referencje do|
+|      zmiennych i funkcji.    |
++-----------------------------+
+                |
+                v
++-----------------------------+
+| 4. Załadowanie do pamięci    |
+|    - System operacyjny      |
+|      wczytuje plik wykonywalny|
+|      do pamięci operacyjnej |
+|      (np. wczytuje kod do     |
+|      segmentu tekstowego).   |
+|    - Tworzy proces w         |
+|      przestrzeni adresowej  |
+|      programu.               |
++-----------------------------+
+                |
+                v
++-----------------------------+
+| 5. Uruchomienie programu     |
+|    - Program jest uruchamiany|
+|      przez system operacyjny,|
+|      a jego kod jest         |
+|      wykonywany przez CPU.   |
+|    - Inicjowane są zmienne  |
+|      globalne, stos oraz sterta.|
++-----------------------------+
