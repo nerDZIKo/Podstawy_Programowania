@@ -1,0 +1,71 @@
+                                 +---------------------------+
+                                 | 1. Rozpoczęcie programu    |
+                                 | - Załadowanie programu do  |
+                                 |   pamięci przez system     |
+                                 +---------------------------+
+                                             |
+                                             v
++-------------------------------------------------------------+
+| 2. Segment Startowy (Startup)                                |
+| - Przed wywołaniem `main()` system wykonuje inicjalizację:   |
+|   * Przygotowanie argumentów programu (np. argv, argc)       |
+|   * Ustawienie wskaźników do zmiennych globalnych i statycznych|
+|   * Przygotowanie stosu i sterty                             |
++-------------------------------------------------------------+
+                                             |
+                                             v
++-------------------------------------------------------------+
+| 3. Segment Kodowy (Text Segment)                             |
+| - Zawiera kod programu (instrukcje wykonywane przez CPU)     |
+| - Rozpoczęcie wykonywania programu, początek funkcji `main()`|
+| - Wykonywane są instrukcje, które mają wpływ na dane w      |
+|   innych segmentach pamięci (np. zmienne globalne, lokalne) |
++-------------------------------------------------------------+
+                                             |
+                                             v
++-------------------------------------------------------------+
+| 4. Segment Danych (Data Segment)                             |
+| - Zawiera zmienne globalne i statyczne, które zostały        |
+|   zainicjowane w kodzie, przed rozpoczęciem działania programu.|
+| - Przykład: `int global_var = 10;`                           |
+| - Te zmienne są dostępne przez cały czas działania programu. |
++-------------------------------------------------------------+
+                                             |
+                                             v
++-------------------------------------------------------------+
+| 5. Segment BSS (BSS Segment)                                 |
+| - Zawiera zmienne globalne i statyczne **niezainicjowane**   |
+|   przez programistę. Zmienne te są **automatycznie ustawiane**|
+|   na 0 przez system operacyjny.                              |
+| - Przykład: `int global_var;` (bez przypisania wartości).     |
++-------------------------------------------------------------+
+                                             |
+                                             v
++-------------------------------------------------------------+
+| 6. Stos (Stack)                                              |
+| - Zawiera dane związane z funkcjami (zmienne lokalne,        |
+|   argumenty funkcji, adresy powrotu).                        |
+| - Przykład: `int local_var = 5;` (zmienna lokalna w funkcji) |
+| - Kiedy funkcja jest wywoływana, jej zmienne lokalne są      |
+|   przechowywane na stosie.                                  |
+| - Zmienne usuwane są ze stosu po zakończeniu funkcji.        |
++-------------------------------------------------------------+
+                                             |
+                                             v
++-------------------------------------------------------------+
+| 7. Sterta (Heap)                                             |
+| - W czasie działania programu można **dynamicznie alokować** |
+|   pamięć (np. za pomocą `malloc()`, `calloc()`, `realloc()`).|
+| - Ta pamięć jest używana do przechowywania danych, których  |
+|   rozmiar może się zmieniać w trakcie działania programu.    |
+| - Pamięć zwalnia się ręcznie przez programistę za pomocą `free()`.|
++-------------------------------------------------------------+
+                                             |
+                                             v
++-------------------------------------------------------------+
+| 8. Zakończenie programu                                      |
+| - Program kończy swoje działanie, zwalniając pamięć i wykonując|
+|   odpowiednie operacje końcowe.                              |
+| - Pamięć przydzielona na stercie (dzięki `malloc()`, itp.)   |
+|   powinna zostać zwrócona przez `free()`.                    |
++-------------------------------------------------------------+
