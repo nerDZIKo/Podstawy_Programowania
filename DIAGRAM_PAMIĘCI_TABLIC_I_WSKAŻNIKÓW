@@ -2,9 +2,10 @@
 
 int main() {
     int tablica[3] = {10, 20, 30};   // Tablica z trzema elementami
-    int* p = tablica;                // Wskaźnik p wskazuje na pierwszy element tablicy
+    int* p = tablica;                // Wskaźnik p wskazuje na pierwszy ADRES elementu tablicy
 
     printf("tablica[0]: %d\n", tablica[0]);  // Wypisuje: 10
+    printf("tablica %p\n", tablica);
     printf("p: %p\n", p);                   // Wypisuje: adres tablica[0]
     printf("*p: %d\n", *p);                 // Wypisuje: 10 (wartość tablica[0])
     
