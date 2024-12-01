@@ -1,1 +1,1 @@
-Podstawy-Programowania w C na zajęciach na Politechnice
+Podstawy Programowania w C na zajęciach na Politechnice
