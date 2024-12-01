@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1; // przypadek bazowy
+    } else {
+        return n * factorial(n - 1); // rekurencyjne wywołanie
+    }
+}
+
+int main() {
+    int result = factorial(4); // obliczamy silnię z 4
+    printf("Silnia z 4: %d\n", result);
+    return 0;
+}
+
++-------------------------------+                  +-------------------------------+
+|           Stos (Stack)         |                  |                               |
++-------------------------------+                  |    Wywołanie factorial(4)     |  <- Ramka dla factorial(4)
+| Return address: main           |                  |    n = 4                     |
+|                               |                  |    factorial(4 - 1)          |
+| local_var (np. wynik)          |                  |                               |
++-------------------------------+                  +-------------------------------+
+           |
+           v
++-------------------------------+                  +-------------------------------+
+|           Stos (Stack)         |                  |                               |
++-------------------------------+                  |    Wywołanie factorial(3)     |  <- Ramka dla factorial(3)
+| Return address: factorial(4)  |                  |    n = 3                     |
+|                               |                  |    factorial(3 - 1)          |
+| local_var (np. wynik)          |                  |                               |
++-------------------------------+                  +-------------------------------+
+           |
+           v
++-------------------------------+                  +-------------------------------+
+|           Stos (Stack)         |                  |                               |
++-------------------------------+                  |    Wywołanie factorial(2)     |  <- Ramka dla factorial(2)
+| Return address: factorial(3)  |                  |    n = 2                     |
+|                               |                  |    factorial(2 - 1)          |
+| local_var (np. wynik)          |                  |                               |
++-------------------------------+                  +-------------------------------+
+           |
+           v
++-------------------------------+                  +-------------------------------+
+|           Stos (Stack)         |                  |                               |
++-------------------------------+                  |    Wywołanie factorial(1)     |  <- Ramka dla factorial(1)
+| Return address: factorial(2)  |                  |    n = 1                     |
+|                               |                  |    factorial(1 - 1)          |
+| local_var (np. wynik)          |                  |                               |
++-------------------------------+                  +-------------------------------+
+           |
+           v
++-------------------------------+                  +-------------------------------+
+|           Stos (Stack)         |                  |                               |
++-------------------------------+                  |    Wywołanie factorial(0)     |  <- Ramka dla factorial(0)
+| Return address: factorial(1)  |                  |    n = 0                     |
+|                               |                  |    return 1 (przypadek bazowy)|
+| local_var (np. wynik)          |                  |                               |
++-------------------------------+                  +-------------------------------+
+           |
+           v
++-------------------------------+ 
+| Return to factorial(1)         |     <- Powrót do factorial(1), przetwarza wynik
++-------------------------------+  
+           |
+           v
++-------------------------------+
+| Return to factorial(2)         |     <- Powrót do factorial(2), przetwarza wynik
++-------------------------------+
+           |
+           v
++-------------------------------+
+| Return to factorial(3)         |     <- Powrót do factorial(3), przetwarza wynik
++-------------------------------+
+           |
+           v
++-------------------------------+
+| Return to factorial(4)         |     <- Powrót do factorial(4), przetwarza wynik
++-------------------------------+
+           |
+           v
++-------------------------------+
+| Return to main (final wynik)   |     <- Końcowy wynik obliczenia
++-------------------------------+
