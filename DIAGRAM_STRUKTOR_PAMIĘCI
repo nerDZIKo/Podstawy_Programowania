@@ -23,7 +23,7 @@
 |     - Pamięć dla tych zmiennych jest alokowana, ale system   |
 |       ustawia je na wartość zero przed uruchomieniem programu.|
 +-------------------------------------------------------------+
-|               Stos (Stack)                                   |
+|               Stos (Stack)                                   | (Pamięć Automatyczna) Najważniejsze!
 |     - Używany do przechowywania zmiennych lokalnych,         |
 |       argumentów funkcji oraz adresów powrotu (tzw.          |
 |       "adresów zwrotnych") po wywołaniu funkcji.             |
@@ -35,7 +35,7 @@
 |       która zostaje z niego usunięta (np. w przypadku zakończenia funkcji).|
 |     - Przykład: `main_var` i `local_var` z funkcji `main()`  |
 +-------------------------------------------------------------+
-|               Sterta (Heap)                                  |
+|               Sterta (Heap)                                  | (Pamięć Dynamiczna: Tablica Dynamiczna) Najważniejsze!
 |     - Pamięć dynamicznie alokowana za pomocą funkcji takich |
 |       jak `malloc()`, `calloc()`, `realloc()`.               |
 |     - Zawiera dane, których rozmiar może zmieniać się w trakcie|
