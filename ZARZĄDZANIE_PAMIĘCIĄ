@@ -1,3 +1,16 @@
+Optymalizuj strukturę danych:
+Wybieraj odpowiednie struktury danych dla swoich potrzeb. Na przykład zamiast listy, której elementy są bardzo duże, rozważ użycie generatorów w Pythonie, które nie trzymają w pamięci wszystkich danych jednocześnie.
+
+Zwalniaj pamięć po użyciu:
+Choć Python automatycznie zarządza pamięcią, należy pamiętać o zarządzaniu obiektami, które są już niepotrzebne. W szczególności, jeśli używasz zewnętrznych zasobów (np. plików, połączeń sieciowych), zawsze je zamykaj po zakończeniu pracy.
+
+Pamiętaj o cyklach referencji:
+Cykl referencji (np. obiekty, które wzajemnie się referencjonują) mogą powodować, że obiekty nie będą zwolnione przez GC. Choć Python ma mechanizm wykrywania takich cykli, warto unikać tworzenia takich struktur, gdzie to możliwe.
+
+Używaj narzędzi do monitorowania pamięci:
+W Pythonie dostępne są narzędzia, takie jak gc do ręcznego wymuszenia zbierania śmieci, psutil do monitorowania użycia pamięci przez procesy, czy objgraph do wykrywania cykli referencyjnych.
+
+
 +-----------------------------------------------+
 |                  Alokacja Pamięci            |
 |  - Pamięć Statyczna / Stała                  |
