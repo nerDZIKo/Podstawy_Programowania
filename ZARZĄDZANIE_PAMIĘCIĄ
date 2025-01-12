@@ -1,5 +1,79 @@
-Przykazania/Biblia do Zarządzania Pamięcią
-
-1. Zawsze czyścić pamięć po wykonaniu programu
-
-2. Void zawsze musi coś zwrócić, bo inaczej będą losowe wartości
++-----------------------------------------------+
+|                  Alokacja Pamięci            |
+|  - Pamięć Statyczna / Stała                  |
+|  - Pamięć Dynamiczna (Heap)                  |
+|  - Pamięć Stosowa (Stack)                    |
+|  - Wskaźniki i Referencje                    |
+|  - Zwalnianie Pamięci                        |
++-----------------------------------------------+
+                 |
+                 v
++-----------------------------------------------+
+|         Pamięć Statyczna / Stała              |
+|  Co to?                                        |
+|  - Pamięć przydzielona na czas całego         |
+|    działania programu.                       |
+|  Jak zarządzać?                               |
+|  - Automatyczne zarządzanie przez kompilator. |
+|  - Brak konieczności ręcznego zwalniania.    |
++-----------------------------------------------+
+                 |
+                 v
++-----------------------------------------------+
+|         Pamięć Dynamiczna (Heap)              |
+|  Co to?                                        |
+|  - Pamięć przydzielana w czasie działania     |
+|    programu (np. przez `malloc`, `new`).      |
+|  Jak zarządzać?                               |
+|  - Alokacja: `malloc`, `calloc`, `new`.       |
+|  - Zwalnianie: `free` (w C), `delete` (w C++). |
++-----------------------------------------------+
+                 |
+                 v
++-----------------------------------------------+
+|        Pamięć Stosowa (Stack)                 |
+|  Co to?                                        |
+|  - Pamięć przydzielana dla zmiennych         |
+|    lokalnych i argumentów funkcji.            |
+|  Jak zarządzać?                               |
+|  - Automatyczne zarządzanie przez system.     |
+|  - Pamięć zwalniana, gdy funkcja kończy działanie. |
++-----------------------------------------------+
+                 |
+                 v
++-----------------------------------------------+
+|         Wskaźniki i Referencje                |
+|  Co to?                                        |
+|  - Wskaźniki przechowują adresy pamięci.      |
+|    Pozwalają na manipulowanie danymi.         |
+|  Jak zarządzać?                               |
+|  - Używaj wskaźników ostrożnie.               |
+|  - Zawsze sprawdzaj, czy wskaźnik jest ważny. |
+|  - `NULL` / `nullptr` dla nieużywanych wskaźników. |
++-----------------------------------------------+
+                 |
+                 v
++-----------------------------------------------+
+|          Zwalnianie Pamięci                   |
+|  Co to?                                        |
+|  - Proces usuwania pamięci, która już nie     |
+|    jest potrzebna.                            |
+|  Jak zarządzać?                               |
+|  - Dynamiczna pamięć: ręczne zwalnianie.      |
+|  - Języki z Garbage Collection (Java, Python):|
+|    Automatyczne zwalnianie nieużywanej pamięci.|
++-----------------------------------------------+
+                 |
+                 v
++-----------------------------------------------+
+|                Podsumowanie                   |
+|  - Alokacja pamięci: `malloc`, `new`, pamięć  |
+|    statyczna dla zmiennych globalnych i stałych.|
+|  - Zarządzanie pamięcią: programista kontroluje|
+|    pamięć dynamiczną i stosową, kompilator     |
+|    statyczną.                                  |
+|  - Używaj wskaźników ostrożnie, by uniknąć błędów|
+|    pamięciowych (segmentation fault).          |
+|  - Zwalniaj pamięć po jej użyciu, by uniknąć    |
+|    wycieków pamięci.                           |
++-----------------------------------------------+
