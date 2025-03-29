@@ -50,11 +50,12 @@ print(sum_of_numbers(1, 20))
 
 # Zadanie 7
 def reverse_word(word):
+    word[::-1]
     if (
         len(word) <= 1
     ):  # Jeżeli długość znaków jest zmniejsza równa 1 -> zwróć słowo - w sumie literę lub jej brak
         return word
-    return reverse_word(word[1:]) + word[0]  # A jak nie, to używamy rekurencji
+    return reverse_word(word[1:]) + word[0]  # A jak nie, to używamy rekurencji (W jednej linijce można)
 
 
 print(reverse_word("Kota ma Ala"))
@@ -62,6 +63,8 @@ print(reverse_word("Kota ma Ala"))
 # Zadanie 8
 lista = list(range(1, 11))
 print(lista)
+
+
 
 # Zadanie 9
 user_input = input("Podaj liczbę")
@@ -89,3 +92,4 @@ with open("file.txt", "w") as f:
 
 f = open("file.txt", "r")
 print(f.read())
+f.close() 
