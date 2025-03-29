@@ -7,6 +7,9 @@ class Osoba:
     
     Metody:
     - funkcja: opisz()
+
+    Obiekt:
+    - np. student_1
     """
     def __init__(self, imie, wiek):
         self.imie = imie
